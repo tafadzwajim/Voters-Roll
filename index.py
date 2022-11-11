@@ -414,3 +414,339 @@ class election():
             obj.treasurer()
         else:
             print("Invalid input. Please try again.")
+            
+            
+#Treasurer --------------------------------------------------------
+
+    def treasurer(obj):
+
+        print("----------------------------------------------------------------------")
+        proceed_tre = int(input("Do you want to proceed voting in Treasurer? 1. Yes / 2. No : "))
+        if proceed_tre == 1:
+            tre = 1
+            while tre <= float('inf'):
+                print("----------------------------------------------------------------------")
+                print("The candidtates running for Treasurer are: \n")
+                print(str(obj.tre1_no) + ") " + obj.tre1_name)
+                print(str(obj.tre2_no) + ") " + obj.aud2_name)
+                print(str(obj.tre3_no) + ") " + obj.tre3_name)
+                print("----------------------------------------------------------------------")
+                tre_vote = int(input("Press the number of candidate you want to vote for: "))
+                if tre_vote == 1:
+                    obj.tre_1 += 1
+                    tre_final = obj.tre1_name + " = " + str(obj.tre_1)
+                    print("----------------------------------------------------------------------")
+                    print("Total votes for " + str(tre_final))
+                    print("Total votes for " + obj.tre2_name + " = " + str(obj.tre_2))
+                    print("Total votes for " + obj.tre3_name + " = " + str(obj.tre_3))
+                    obj.media_info()
+                    break
+                elif tre_vote == 2:
+                    obj.tre_2 += 1
+                    tre2_final = obj.tre2_name + " = " + str(obj.tre_2)
+                    print("----------------------------------------------------------------------")
+                    print("Total votes for " + obj.tre1_name + " = " + str(obj.tre_1))
+                    print("Total votes for " + str(tre2_final))
+                    print("Total votes for " + obj.tre3_name + " = " + str(obj.tre_3))
+                    obj.media_info()
+                    break
+                elif tre_vote == 3:
+                    obj.tre_3 += 1
+                    tre3_final = obj.tre3_name + " = " + str(obj.tre_3)
+                    print("----------------------------------------------------------------------")
+                    print("Total votes for " + obj.tre1_name + " = " + str(obj.tre_1))
+                    print("Total votes for " + obj.tre2_name + " = " + str(obj.tre_2))
+                    print("Total votes for " + str(tre3_final))
+                    obj.media_info()
+                    break
+                else:
+                    print("Invalid input. Please try again.")
+        elif proceed_tre == 2:
+            obj.media_info()
+        else:
+            print("Invalid input. Please try again.")
+
+#Media Information --------------------------------------------------------
+
+    def media_info(obj):
+
+        print("----------------------------------------------------------------------")
+        proceed_media = int(input("Do you want to proceed voting in Media Information? 1. Yes / 2. No : "))
+        if proceed_media == 1:
+            media = 1
+            while media <= float('inf'):
+                print("----------------------------------------------------------------------")
+                print("The candidtates running for Media Information are: \n")
+                print(str(obj.media1_no) + ") " + obj.media1_name)
+                print(str(obj.media2_no) + ") " + obj.media2_name)
+                print(str(obj.media3_no) + ") " + obj.media3_name)
+                print("----------------------------------------------------------------------")
+                media_vote = int(input("Press the number of candidate you want to vote for: "))
+                if media_vote == 1:
+                    obj.media_1 += 1
+                    media_final = obj.media1_name + " = " + str(obj.media_1)
+                    print("----------------------------------------------------------------------")
+                    print("Total votes for " + str(media_final))
+                    print("Total votes for " + obj.media2_name + " = " + str(obj.media_2))
+                    print("Total votes for " + obj.media3_name + " = " + str(obj.media_3))
+                    obj.first_yr_rep()
+                    break
+                elif media_vote == 2:
+                    obj.media_2 += 1
+                    media2_final = obj.media2_name + " = " + str(obj.media_2)
+                    print("----------------------------------------------------------------------")
+                    print("Total votes for " + obj.media1_name + " = " + str(obj.media_1))
+                    print("Total votes for " + str(media2_final))
+                    print("Total votes for " + obj.media3_name + " = " + str(obj.media_3))
+                    obj.first_yr_rep()
+                    break
+                elif media_vote == 3:
+                    obj.media_3 += 1
+                    media3_final = obj.media3_name + " = " + str(obj.media_3)
+                    print("----------------------------------------------------------------------")
+                    print("Total votes for " + obj.media1_name + " = " + str(obj.media_1))
+                    print("Total votes for " + obj.media2_name + " = " + str(obj.media_2))
+                    print("Total votes for " + str(media3_final))
+                    obj.first_yr_rep()
+                    break
+                else:
+                    print("Invalid input. Please try again.")
+        elif proceed_media == 2:
+            obj.first_yr_rep()
+        else:
+            print("Invalid input. Please try again.")
+
+#First Year Representatives --------------------------------------------------------
+
+    def first_yr_rep(obj):
+
+        print("----------------------------------------------------------------------")
+        proceed_f_rep = int(input("Do you want to proceed voting in First Year Representative? 1. Yes / 2. No : "))
+        if proceed_f_rep == 1:
+            f_rep = 1
+            while f_rep <= float('inf'):
+                print("----------------------------------------------------------------------")
+                print("The candidtates running for First Year Representative are: \n")
+                print(str(obj.f_rep1_no) + ") " + obj.f_rep1_name)
+                print(str(obj.f_rep2_no) + ") " + obj.f_rep2_name)
+                print(str(obj.f_rep3_no) + ") " + obj.f_rep3_name)
+                print("----------------------------------------------------------------------")
+                f_rep_vote = int(input("Press the number of candidate you want to vote for: "))
+                if f_rep_vote == 1:
+                    obj.f_rep_1 += 1
+                    f_rep_final = obj.f_rep1_name + " = " + str(obj.f_rep_1)
+                    print("----------------------------------------------------------------------")
+                    print("Total votes for " + str(f_rep_final))
+                    print("Total votes for " + obj.f_rep2_name + " = " + str(obj.f_rep_2))
+                    print("Total votes for " + obj.f_rep3_name + " = " + str(obj.f_rep_3))
+                    obj.sec_yr_rep()
+                    break
+                elif f_rep_vote == 2:
+                    obj.f_rep_2 += 1
+                    f_rep2_final = obj.f_rep2_name + " = " + str(obj.f_rep_2)
+                    print("----------------------------------------------------------------------")
+                    print("Total votes for " + obj.f_rep1_name + " = " + str(obj.f_rep_1))
+                    print("Total votes for " + str(f_rep2_final))
+                    print("Total votes for " + obj.f_rep3_name + " = " + str(obj.f_rep_3))
+                    obj.sec_yr_rep()
+                    break
+                elif f_rep_vote == 3:
+                    obj.f_rep_3 += 1
+                    f_rep3_final = obj.f_rep3_name + " = " + str(obj.f_rep_3)
+                    print("----------------------------------------------------------------------")
+                    print("Total votes for " + obj.f_rep1_name + " = " + str(obj.f_rep_1))
+                    print("Total votes for " + obj.f_rep2_name + " = " + str(obj.f_rep_2))
+                    print("Total votes for " + str(f_rep3_final))
+                    obj.sec_yr_rep()
+                    break
+                else:
+                    print("Invalid input. Please try again.")
+        elif proceed_f_rep == 2:
+            obj.sec_yr_rep()
+        else:
+            print("Invalid input. Please try again.")
+
+#Second Year Representatives --------------------------------------------------------
+
+    def sec_yr_rep(obj):
+
+        print("----------------------------------------------------------------------")
+        proceed_s_rep = int(input("Do you want to proceed voting in Second Year Representative? 1. Yes / 2. No : "))
+        if proceed_s_rep == 1:
+            s_rep = 1
+            while s_rep <= float('inf'):
+                print("----------------------------------------------------------------------")
+                print("The candidtates running for Second Year Representative are: \n")
+                print(str(obj.s_rep1_no) + ") " + obj.s_rep1_name)
+                print(str(obj.s_rep2_no) + ") " + obj.s_rep2_name)
+                print(str(obj.s_rep3_no) + ") " + obj.s_rep3_name)
+                print("----------------------------------------------------------------------")
+                s_rep_vote = int(input("Press the number of candidate you want to vote for: "))
+                if s_rep_vote == 1:
+                    obj.s_rep_1 += 1
+                    s_rep_final = obj.s_rep1_name + " = " + str(obj.s_rep_1)
+                    print("----------------------------------------------------------------------")
+                    print("Total votes for " + str(s_rep_final))
+                    print("Total votes for " + obj.s_rep2_name + " = " + str(obj.s_rep_2))
+                    print("Total votes for " + obj.s_rep3_name + " = " + str(obj.s_rep_3))
+                    obj.third_yr_rep()
+                    break
+                elif s_rep_vote == 2:
+                    obj.s_rep_2 += 1
+                    s_rep2_final = obj.s_rep2_name + " = " + str(obj.s_rep_2)
+                    print("----------------------------------------------------------------------")
+                    print("Total votes for " + obj.s_rep1_name + " = " + str(obj.s_rep_1))
+                    print("Total votes for " + str(s_rep2_final))
+                    print("Total votes for " + obj.s_rep3_name + " = " + str(obj.s_rep_3))
+                    obj.third_yr_rep()
+                    break
+                elif s_rep_vote == 3:
+                    obj.s_rep_3 += 1
+                    s_rep3_final = obj.s_rep3_name + " = " + str(obj.s_rep_3)
+                    print("----------------------------------------------------------------------")
+                    print("Total votes for " + obj.s_rep1_name + " = " + str(obj.s_rep_1))
+                    print("Total votes for " + obj.s_rep2_name + " = " + str(obj.s_rep_2))
+                    print("Total votes for " + str(s_rep3_final))
+                    obj.third_yr_rep()
+                    break
+                else:
+                    print("Invalid input. Please try again.")
+        elif proceed_s_rep == 2:
+            obj.third_yr_rep()
+        else:
+            print("Invalid input. Please try again.")
+
+#Third Year Representatives --------------------------------------------------------
+
+    def third_yr_rep(obj):
+
+        print("----------------------------------------------------------------------")
+        proceed_t_rep = int(input("Do you want to proceed voting in Third Year Representative? 1. Yes / 2. No : "))
+        if proceed_t_rep == 1:
+            t_rep = 1
+            while t_rep <= float('inf'):
+                print("----------------------------------------------------------------------")
+                print("The candidtates running for Third Year Representative are: \n")
+                print(str(obj.t_rep1_no) + ") " + obj.t_rep1_name)
+                print(str(obj.t_rep2_no) + ") " + obj.t_rep2_name)
+                print(str(obj.t_rep3_no) + ") " + obj.t_rep3_name)
+                print("----------------------------------------------------------------------")
+                t_rep_vote = int(input("Press the number of candidate you want to vote for: "))
+                if t_rep_vote == 1:
+                    obj.t_rep_1 += 1
+                    t_rep_final = obj.t_rep1_name + " = " + str(obj.t_rep_1)
+                    print("----------------------------------------------------------------------")
+                    print("Total votes for " + str(t_rep_final))
+                    print("Total votes for " + obj.t_rep2_name + " = " + str(obj.t_rep_2))
+                    print("Total votes for " + obj.t_rep3_name + " = " + str(obj.t_rep_3))
+                    obj.fourth_yr_rep()
+                    break
+                elif t_rep_vote == 2:
+                    obj.t_rep_2 += 1
+                    t_rep2_final = obj.t_rep2_name + " = " + str(obj.t_rep_2)
+                    print("----------------------------------------------------------------------")
+                    print("Total votes for " + obj.t_rep1_name + " = " + str(obj.t_rep_1))
+                    print("Total votes for " + str(t_rep2_final))
+                    print("Total votes for " + obj.t_rep3_name + " = " + str(obj.t_rep_3))
+                    obj.fourth_yr_rep()
+                    break
+                elif t_rep_vote == 3:
+                    obj.t_rep_3 += 1
+                    t_rep3_final = obj.t_rep3_name + " = " + str(obj.t_rep_3)
+                    print("----------------------------------------------------------------------")
+                    print("Total votes for " + obj.t_rep1_name + " = " + str(obj.t_rep_1))
+                    print("Total votes for " + obj.t_rep2_name + " = " + str(obj.t_rep_2))
+                    print("Total votes for " + str(t_rep3_final))
+                    obj.fourth_yr_rep()
+                    break
+                else:
+                    print("Invalid input. Please try again.")
+        elif proceed_t_rep == 2:
+            obj.fourth_yr_rep()
+        else:
+            print("Invalid input. Please try again.")
+
+#Fourth Year Representatives --------------------------------------------------------
+
+    def fourth_yr_rep(obj):
+
+        print("----------------------------------------------------------------------")
+        proceed_frt_rep = int(input("Do you want to proceed voting in Fourth Year Representative? 1. Yes / 2. No : "))
+        if proceed_frt_rep == 1:
+            frt_rep = 1
+            while frt_rep <= float('inf'):
+                print("----------------------------------------------------------------------")
+                print("The candidtates running for Fourth Year Representative are: \n")
+                print(str(obj.frt_rep1_no) + ") " + obj.frt_rep1_name)
+                print(str(obj.frt_rep2_no) + ") " + obj.frt_rep2_name)
+                print(str(obj.frt_rep3_no) + ") " + obj.frt_rep3_name)
+                print("----------------------------------------------------------------------")
+                frt_rep_vote = int(input("Press the number of candidate you want to vote for: "))
+                if frt_rep_vote == 1:
+                    obj.frt_rep_1 += 1
+                    frt_rep_final = obj.frt_rep1_name + " = " + str(obj.frt_rep_1)
+                    print("----------------------------------------------------------------------")
+                    print("Total votes for " + str(frt_rep_final))
+                    print("Total votes for " + obj.frt_rep2_name + " = " + str(obj.frt_rep_2))
+                    print("Total votes for " + obj.frt_rep3_name + " = " + str(obj.frt_rep_3))
+                    obj.another_vote()
+                    break
+                elif frt_rep_vote == 2:
+                    obj.frt_rep_2 += 1
+                    frt_rep2_final = obj.frt_rep2_name + " = " + str(obj.frt_rep_2)
+                    print("----------------------------------------------------------------------")
+                    print("Total votes for " + obj.frt_rep1_name + " = " + str(obj.frt_rep_1))
+                    print("Total votes for " + str(frt_rep2_final))
+                    print("Total votes for " + obj.frt_rep3_name + " = " + str(obj.frt_rep_3))
+                    obj.another_vote()
+                    break
+                elif frt_rep_vote == 3:
+                    obj.frt_rep_3 += 1
+                    frt_rep3_final = obj.frt_rep3_name + " = " + str(obj.frt_rep_3)
+                    print("----------------------------------------------------------------------")
+                    print("Total votes for " + obj.frt_rep1_name + " = " + str(obj.frt_rep_1))
+                    print("Total votes for " + obj.frt_rep2_name + " = " + str(obj.frt_rep_2))
+                    print("Total votes for " + str(frt_rep3_final))
+                    obj.another_vote()
+                    break
+                else:
+                    print("Invalid input. Please try again.")
+        elif proceed_frt_rep == 2:
+            obj.another_vote()
+        else:
+            print("Invalid input. Please try again.")
+
+#Another vote --------------------------------------------------------
+
+    def another_vote(obj):
+        a = """  IF ANY OF THE POSITION GOT A TIE VOTE RESULTS, JUST START THE PROGRAM OVER AGAIN
+AND KINDLY SKIP (DO NOT PROCEED) TO THE POSITION THAT DOES NOT HAVE A TIE VOTE RESULT"""
+        print("----------------------------------------------------------------------")
+        an_vote = int(input("DO YOU WANT TO PROCEED ANOTHER VOTE? 1. Yes / 2. No : "))
+        while True:
+            if an_vote == 1:
+                obj.registration()
+                obj.president()
+                obj.vice_pres()
+                obj.secretary()
+                obj.auditor()
+                obj.treasurer()
+                obj.media_info()
+                obj.first_yr_rep()
+                obj.sec_yr_rep()
+                obj.third_yr_rep()
+                obj.fourth_yr_rep()
+                break
+            elif an_vote == 2:
+                obj.loading_result()
+                obj.result()
+                print(a)
+                sys.exit()
+            else:
+                print("Invalid input. Please try again.")
+
+#Results --------------------------------------------------------
+
+            
+            
+            
