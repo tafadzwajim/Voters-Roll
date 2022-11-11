@@ -178,3 +178,239 @@ class election():
         # long process here
         time.sleep(8)
         done = True
+  def registration(obj):
+
+        while True:
+            print("-----------------------------REGISTRATION-----------------------------")
+            print("")
+            obj.f_name = input("First name: ")
+            obj.l_name = input("Last name: ")
+            obj.course = input("Deptment of: ")
+            obj.year_section = input("D O B: ")
+            obj.stud_id = int(input("Student ID no.: "))
+            if obj.stud_id in students_id:
+                students_id.remove(obj.stud_id)
+                obj.loading()
+                print("Done!")
+                print('-----------------------Registered Successfully!-----------------------')
+                print("Name: " + obj.f_name + " " + obj.l_name)
+                print("Class: " + obj.course)
+                print("D O B: " + obj.year_section)
+                print("Voter's ID: " + str(obj.stud_id))
+                obj.president()
+                obj.vice_pres()
+                obj.secretary()
+                obj.auditor()
+                obj.treasurer()
+                obj.media_info()
+                obj.first_yr_rep()
+                obj.sec_yr_rep()
+                obj.third_yr_rep()
+                obj.fourth_yr_rep()
+                break
+            else:
+                obj.error_loading()
+                print("Done!")
+                print("------------------ID existed. You have already voted!----------------")
+                print("---------------------------PLEASE TRY AGAIN--------------------------\n")
+
+#President --------------------------------------------------------
+    def president(obj):
+
+        print("----------------------------------------------------------------------")
+        proceed_pres = int(input("Do you want to proceed voting in President? 1. Yes / 2. No : "))
+        if proceed_pres == 1:
+            pres = 1
+            while pres <= float('inf'):
+                print("----------------------------------------------------------------------")
+                print("The candidtates running for President are: \n")
+                print(str(obj.p1_no) + ") " + obj.p1_name)
+                print(str(obj.p2_no) + ") " + obj.p2_name)
+                print(str(obj.p3_no) + ") " + obj.p3_name)
+                print("----------------------------------------------------------------------")
+                pres_vote = int(input("Press the number of candidate you want to vote for: "))
+                if pres_vote == 1:
+                    obj.pres_1 += 1
+                    pres1_final = obj.p1_name + " = " + str(obj.pres_1)
+                    print("----------------------------------------------------------------------")
+                    print("Total votes for " + str(pres1_final))
+                    print("Total votes for " + obj.p2_name + " = " + str(obj.pres_2))
+                    print("Total votes for " + obj.p3_name + " = " + str(obj.pres_3))
+                    obj.vice_pres()
+                    break
+                elif pres_vote == 2:
+                    obj.pres_2 += 1
+                    pres2_final = obj.p2_name + " = " + str(obj.pres_2)
+                    print("----------------------------------------------------------------------")
+                    print("Total votes for " + obj.p1_name + " = " + str(obj.pres_1))
+                    print("Total votes for " + str(pres2_final))
+                    print("Total votes for " + obj.p3_name + " = " + str(obj.pres_3))
+                    obj.vice_pres()
+                    break
+                elif pres_vote == 3:
+                    obj.pres_3 += 1
+                    pres3_final = obj.p3_name + " = " + str(obj.pres_3)
+                    print("----------------------------------------------------------------------")
+                    print("Total votes for " + obj.p1_name + " = " + str(obj.pres_1))
+                    print("Total votes for " + obj.p2_name + " = " + str(obj.pres_2))
+                    print("Total votes for " + str(pres3_final))
+                    obj.vice_pres()
+                    break
+                else:
+                    print("Invalid input. Please try again.")
+                    print("----------------------------------------------------------------------")
+        elif proceed_pres == 2:
+            obj.vice_pres()
+        else:
+            print("Invalid input. Please try again.")
+            print("----------------------------------------------------------------------")
+
+#Vice president --------------------------------------------------------
+
+    def vice_pres(obj):
+
+        print("----------------------------------------------------------------------")
+        proceed_vpres = int(input("Do you want to proceed voting in Vice President? 1. Yes / 2. No : "))
+        if proceed_vpres == 1:
+            vpres = 1
+            while vpres <= float('inf'):
+                print("----------------------------------------------------------------------")
+                print("The candidtates running for Vice President are: \n")
+                print(str(obj.vp1_no) + ") " + obj.vp1_name)
+                print(str(obj.vp2_no) + ") " + obj.vp2_name)
+                print(str(obj.vp3_no) + ") " + obj.vp3_name)
+                print("----------------------------------------------------------------------")
+                vpres_vote = int(input("Press the number of candidate you want to vote for: "))
+                if vpres_vote == 1:
+                    obj.vpres_1 += 1
+                    vpres1_final = obj.vp1_name + " = " + str(obj.vpres_1)
+                    print("----------------------------------------------------------------------")
+                    print("Total votes for " + str(vpres1_final))
+                    print("Total votes for " + obj.vp2_name + " = " + str(obj.vpres_2))
+                    print("Total votes for " + obj.vp3_name + " = " + str(obj.vpres_3))
+                    obj.secretary()
+                    break
+                elif vpres_vote == 2:
+                    obj.vpres_2 += 1
+                    vpres2_final = obj.vp2_name + " = " + str(obj.vpres_2)
+                    print("----------------------------------------------------------------------")
+                    print("Total votes for " + obj.vp1_name + " = " + str(obj.vpres_1))
+                    print("Total votes for " + str(vpres2_final))
+                    print("Total votes for " + obj.vp3_name + " = " + str(obj.vpres_3))
+                    obj.secretary()
+                    break
+                elif vpres_vote == 3:
+                    obj.vpres_3 += 1
+                    vpres3_final = obj.vp3_name + " = " + str(obj.vpres_3)
+                    print("----------------------------------------------------------------------")
+                    print("Total votes for " + obj.vp1_name + " = " + str(obj.vpres_1))
+                    print("Total votes for " + obj.vp2_name + " = " + str(obj.vpres_2))
+                    print("Total votes for " + str(vpres3_final))
+                    obj.secretary()
+                    break
+                else:
+                    print("Invalid input. Please try again.")
+        elif proceed_vpres == 2:
+            obj.secretary()
+        else:
+            print("Invalid input. Please try again.")
+
+#Secretary --------------------------------------------------------
+
+    def secretary(obj):
+
+        print("----------------------------------------------------------------------")
+        proceed_sec = int(input("Do you want to proceed voting in Secretary? 1. Yes / 2. No : "))
+        if proceed_sec == 1:
+            sec = 1
+            while sec <= float('inf'):
+                print("----------------------------------------------------------------------")
+                print("The candidtates running for Secretary are: \n")
+                print(str(obj.sec1_no) + ") " + obj.sec1_name)
+                print(str(obj.sec2_no) + ") " + obj.sec2_name)
+                print(str(obj.sec3_no) + ") " + obj.sec3_name)
+                print("----------------------------------------------------------------------")
+                sec_vote = int(input("Press the number of candidate you want to vote for: "))
+                if sec_vote == 1:
+                    obj.sec_1 += 1
+                    sec_final = obj.sec1_name + " = " + str(obj.sec_1)
+                    print("----------------------------------------------------------------------")
+                    print("Total votes for " + str(sec_final))
+                    print("Total votes for " + obj.sec2_name + " = " + str(obj.sec_2))
+                    print("Total votes for " + obj.sec3_name + " = " + str(obj.sec_3))
+                    obj.auditor()
+                    break
+                elif sec_vote == 2:
+                    obj.sec_2 += 1
+                    sec2_final = obj.sec2_name + " = " + str(obj.sec_2)
+                    print("----------------------------------------------------------------------")
+                    print("Total votes for " + obj.sec1_name + " = " + str(obj.sec_1))
+                    print("Total votes for " + str(sec2_final))
+                    print("Total votes for " + obj.sec3_name + " = " + str(obj.sec_3))
+                    obj.auditor()
+                    break
+                elif sec_vote == 3:
+                    obj.sec_3 += 1
+                    sec3_final = obj.sec3_name + " = " + str(obj.sec_3)
+                    print("----------------------------------------------------------------------")
+                    print("Total votes for " + obj.sec1_name + " = " + str(obj.sec_1))
+                    print("Total votes for " + obj.sec2_name + " = " + str(obj.sec_2))
+                    print("Total votes for " + str(sec3_final))
+                    obj.auditor()
+                    break
+                else:
+                    print("Invalid input. Please try again.")
+        elif proceed_sec == 2:
+            obj.auditor()
+        else:
+            print("Invalid input. Please try again.")
+
+#Auditor --------------------------------------------------------
+
+    def auditor(obj):
+
+        print("----------------------------------------------------------------------")
+        proceed_aud = int(input("Do you want to proceed voting in Auditor? 1. Yes / 2. No : "))
+        if proceed_aud == 1:
+            aud = 1
+            while aud <= float('inf'):
+                print("----------------------------------------------------------------------")
+                print("The candidtates running for Auditor are: \n")
+                print(str(obj.aud1_no) + ") " + obj.aud1_name)
+                print(str(obj.aud2_no) + ") " + obj.aud2_name)
+                print(str(obj.aud3_no) + ") " + obj.aud3_name)
+                print("----------------------------------------------------------------------")
+                aud_vote = int(input("Press the number of candidate you want to vote for: "))
+                if aud_vote == 1:
+                    obj.aud_1 += 1
+                    aud_final = obj.aud1_name + " = " + str(obj.aud_1)
+                    print("----------------------------------------------------------------------")
+                    print("Total votes for " + str(aud_final))
+                    print("Total votes for " + obj.aud2_name + " = " + str(obj.aud_2))
+                    print("Total votes for " + obj.aud3_name + " = " + str(obj.aud_3))
+                    obj.treasurer()
+                    break
+                elif aud_vote == 2:
+                    obj.aud_2 += 1
+                    aud2_final = obj.aud2_name + " = " + str(obj.aud_2)
+                    print("----------------------------------------------------------------------")
+                    print("Total votes for " + obj.aud1_name + " = " + str(obj.aud_1))
+                    print("Total votes for " + str(aud2_final))
+                    print("Total votes for " + obj.aud3_name + " = " + str(obj.aud_3))
+                    obj.treasurer()
+                    break
+                elif aud_vote == 3:
+                    obj.aud_3 += 1
+                    aud3_final = obj.aud3_name + " = " + str(obj.aud_3)
+                    print("----------------------------------------------------------------------")
+                    print("Total votes for " + obj.aud1_name + " = " + str(obj.aud_1))
+                    print("Total votes for " + obj.aud2_name + " = " + str(obj.aud_2))
+                    print("Total votes for " + str(aud3_final))
+                    obj.treasurer()
+                    break
+                else:
+                    print("Invalid input. Please try again.")
+        elif proceed_aud == 2:
+            obj.treasurer()
+        else:
+            print("Invalid input. Please try again.")
