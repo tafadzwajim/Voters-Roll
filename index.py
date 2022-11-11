@@ -31,6 +31,7 @@ class election():
     vpres_2 = 0
     vpres_3 = 0
     # Candidates for Secretary----------------------------------
+    # Candidates for Secretary----------------------------------
     sec1_no = 1
     sec2_no = 2
     sec3_no = 3
