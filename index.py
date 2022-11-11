@@ -747,7 +747,140 @@ AND KINDLY SKIP (DO NOT PROCEED) TO THE POSITION THAT DOES NOT HAVE A TIE VOTE R
                 print("Invalid input. Please try again.")
 
 #Results --------------------------------------------------------
+ def result(obj):
+        #Ranking for President----------------------------
+        pres_total = (obj.pres_1, obj.pres_2, obj.pres_3)
+        pres_result = max(pres_total)
+        # Ranking for Vice President----------------------------
+        vp_total = (obj.vpres_1, obj.vpres_2, obj.vpres_3)
+        vp_result = max(vp_total)
+        # Ranking for Secretary----------------------------
+        sec_total = (obj.sec_1, obj.sec_2, obj.sec_3)
+        sec_result = max(sec_total)
+        # Ranking for Auditor----------------------------
+        aud_total = (obj.aud_1, obj.aud_2, obj.aud_3)
+        aud_result = max(aud_total)
+        # Ranking for Treasurer----------------------------
+        tre_total = (obj.tre_1, obj.tre_2, obj.tre_3)
+        tre_result = max(tre_total)
+        # Ranking for Media Information----------------------------
+        media_total = (obj.media_1, obj.media_2, obj.media_3)
+        media_result = max(media_total)
+        # Ranking for First Year Representative----------------------------
+        f_rep_total = (obj.f_rep_1, obj.f_rep_2, obj.f_rep_3)
+        f_rep_result = max(f_rep_total)
+        # Ranking for Second Year Representative----------------------------
+        s_rep_total = (obj.s_rep_1, obj.s_rep_2, obj.s_rep_3)
+        s_rep_result = max(s_rep_total)
+        # Ranking for Third Year Representative----------------------------
+        t_rep_total = (obj.t_rep_1, obj.t_rep_2, obj.t_rep_3)
+        t_rep_result = max(t_rep_total)
+        # Ranking for Fourth Year Representative----------------------------
+        frt_rep_total = (obj.frt_rep_1, obj.frt_rep_2, obj.frt_rep_3)
+        frt_rep_result = max(frt_rep_total)
+        print("")
+        print("***************** SUPREME STUDENT GOVERNMENT  JHS 2022 ******************")
+        print("")
+        # Final Result for President ------------------------------------------------------------------------
+        if ((obj.pres_1 > obj.pres_2) and (obj.pres_1 > obj.pres_3)):
+            print("****************** New elected President for JHS 2022 ******************")
+            print(str(obj.p1_no) + ") " + str(obj.p1_name) + " with a total votes of = " + str(pres_result))
+            print("------------------------------------------------------------------------------")
+        elif ((obj.pres_2 > obj.pres_1) and (obj.pres_2 > obj.pres_3)):
+            print("****************** New elected President for JHS 2022 ******************")
+            print(str(obj.p2_no) + ") " + str(obj.p2_name) + " with a total votes of = " + str(pres_result))
+            print("------------------------------------------------------------------------------")
+        elif ((obj.pres_3 > obj.pres_1) and (obj.pres_3 > obj.pres_2)):
+            print("****************** New elected President for JHS 2022 ******************")
+            print(str(obj.p3_no) + ") " + str(obj.p3_name) + " with a total votes of = " + str(pres_result))
+            print("------------------------------------------------------------------------------")
+        elif ((obj.pres_1 == obj.pres_2) and (obj.pres_1 > obj.pres_3) and (obj.pres_2 > obj.pres_3)):
+            print("----------------------- WE HAVE A TIE -----------------------")
+            print(str(obj.p1_no) + ") " + str(obj.p1_name) + " with a total votes of = " + str(pres_result))
+            print(str(obj.p2_no) + ") " + str(obj.p2_name) + " with a total votes of = " + str(pres_result))
+        elif ((obj.pres_2 == obj.pres_3) and (obj.pres_2 > obj.pres_1) and (obj.pres_3 > obj.pres_1)):
+            print(str(obj.p2_no) + ") " + str(obj.p2_name) + " with a total votes of = " + str(pres_result))
+            print(str(obj.p3_no) + ") " + str(obj.p3_name) + " with a total votes of = " + str(pres_result))
+        elif ((obj.pres_1 == obj.pres_3) and (obj.pres_1 > obj.pres_2) and (obj.pres_3 > obj.pres_2)):
+            print(str(obj.p1_no) + ") " + str(obj.p1_name) + " with a total votes of = " + str(pres_result))
+            print(str(obj.p3_no) + ") " + str(obj.p3_name) + " with a total votes of = " + str(pres_result))
+        elif ((obj.pres_1 == obj.pres_2) and (obj.pres_1 == obj.pres_3)
+              and (obj.pres_2 == obj.pres_1) and (obj.pres_2 == obj.pres_3)
+              and (obj.pres_3 == obj.pres_1) and (obj.pres_3 == obj.pres_2)):
+            print("----------------------- WE HAVE TRIPLE TIE FOR PRESIDENT -----------------------")
+            print(str(obj.p1_no) + ") " + str(obj.p1_name) + " with a total votes of = " + str(pres_result))
+            print(str(obj.p2_no) + ") " + str(obj.p2_name) + " with a total votes of = " + str(pres_result))
+            print(str(obj.p3_no) + ") " + str(obj.p3_name) + " with a total votes of = " + str(pres_result))
+            print("------------------------------------------------------------------------------")
 
+        # Final Result for Vice President ------------------------------------------------------------------------
+        if ((obj.vpres_1 > obj.vpres_2) and (obj.vpres_1 > obj.vpres_3)):
+            print("*************** New elected Vice President for for JHS 2022 ****************")
+            print(str(obj.vp1_no) + ") " + str(obj.vp1_name) + " with a total votes of = " + str(vp_result))
+            print("------------------------------------------------------------------------------")
+        elif ((obj.vpres_2 > obj.vpres_1) and (obj.vpres_2 > obj.vpres_3)):
+            print("*************** New elected Vice President for for JHS 2022 ****************")
+            print(str(obj.vp2_no) + ") " + str(obj.vp2_name) + " with a total votes of = " + str(vp_result))
+            print("------------------------------------------------------------------------------")
+        elif ((obj.vpres_3 > obj.vpres_1) and (obj.vpres_3 > obj.vpres_2)):
+            print("*************** New elected Vice President for for JHS 2022 ****************")
+            print(str(obj.vp3_no) + ") " + str(obj.vp3_name) + " with a total votes of = " + str(vp_result))
+            print("------------------------------------------------------------------------------")
+        elif ((obj.vpres_1 == obj.vpres_2) and (obj.vpres_1 > obj.vpres_3) and (obj.vpres_2 > obj.vpres_3)):
+            print("---------------------- WE HAVE A TIE FOR VICE PRESIDENT ----------------------")
+            print(str(obj.vp1_no) + ") " + str(obj.vp1_name) + " with a total votes of = " + str(vp_result))
+            print(str(obj.vp2_no) + ") " + str(obj.vp2_name) + " with a total votes of = " + str(vp_result))
+            print("------------------------------------------------------------------------------")
+        elif ((obj.vpres_2 == obj.vpres_3) and (obj.vpres_2 > obj.vpres_1) and (obj.vpres_3 > obj.vpres_1)):
+            print("---------------------- WE HAVE A TIE FOR VICE PRESIDENT ----------------------")
+            print(str(obj.vp2_no) + ") " + str(obj.vp2_name) + " with a total votes of = " + str(vp_result))
+            print(str(obj.vp3_no) + ") " + str(obj.vp3_name) + " with a total votes of = " + str(vp_result))
+            print("------------------------------------------------------------------------------")
+        elif ((obj.pres_1 == obj.pres_3) and (obj.pres_1 > obj.pres_2) and (obj.pres_3 > obj.pres_2)):
+            print("---------------------- WE HAVE A TIE FOR VICE PRESIDENT ----------------------")
+            print(str(obj.vp1_no) + ") " + str(obj.vp1_name) + " with a total votes of = " + str(vp_result))
+            print(str(obj.vp3_no) + ") " + str(obj.vp3_name) + " with a total votes of = " + str(vp_result))
+            print("------------------------------------------------------------------------------")
+        elif ((obj.vpres_1 == obj.vpres_2) and (obj.vpres_1 == obj.vpres_3)
+              and (obj.vpres_2 == obj.pres_1) and (obj.vpres_2 == obj.vpres_3)
+              and (obj.vpres_3 == obj.vpres_1) and (obj.vpres_3 == obj.vpres_2)):
+            print("------------------- WE HAVE TRIPLE TIE FOR VICE PRESIDENT --------------------")
+            print(str(obj.vp1_no) + ") " + str(obj.vp1_name) + " with a total votes of = " + str(vp_result))
+            print(str(obj.vp2_no) + ") " + str(obj.vp2_name) + " with a total votes of = " + str(vp_result))
+            print(str(obj.vp3_no) + ") " + str(obj.vp3_name) + " with a total votes of = " + str(vp_result))
+            print("------------------------------------------------------------------------------")
+
+        # Final Result for Secretary ------------------------------------------------------------------------
+        if ((obj.sec_1 > obj.sec_2) and (obj.sec_1 > obj.sec_3)):
+            print("***************** New elected Secretary for JHS 2022 *******************")
+            print(str(obj.sec1_no) + ") " + str(obj.sec1_name) + " with a total votes of = " + str(sec_result))
+            print("------------------------------------------------------------------------------")
+        elif ((obj.sec_2 > obj.sec_1) and (obj.sec_2 > obj.sec_3)):
+            print("***************** New elected Secretary for JHS 2022 *******************")
+            print(str(obj.sec2_no) + ") " + str(obj.sec2_name) + " with a total votes of = " + str(sec_result))
+            print("------------------------------------------------------------------------------")
+        elif ((obj.sec_3 > obj.sec_1) and (obj.sec_3 > obj.sec_2)):
+            print("***************** New elected Secretary for JHS 2022 *******************")
+            print(str(obj.sec3_no) + ") " + str(obj.sec3_name) + " with a total votes of = " + str(sec_result))
+            print("------------------------------------------------------------------------------")
+        elif ((obj.sec_1 == obj.sec_2) and (obj.sec_1 > obj.sec_3) and (obj.sec_2 > obj.sec_3)):
+            print("------------------------ WE HAVE A TIE FOR SECRETARY -------------------------")
+            print(str(obj.sec1_no) + ") " + str(obj.sec1_name) + " with a total votes of = " + str(sec_result))
+            print(str(obj.sec2_no) + ") " + str(obj.sec2_name) + " with a total votes of = " + str(sec_result))
+            print("------------------------------------------------------------------------------")
+        elif ((obj.sec_2 == obj.sec_3) and (obj.sec_2 > obj.sec_1) and (obj.sec_3 > obj.sec_1)):
+            print("------------------------ WE HAVE A TIE FOR SECRETARY -------------------------")
+            print(str(obj.sec2_no) + ") " + str(obj.sec2_name) + " with a total votes of = " + str(sec_result))
+            print(str(obj.sec3_no) + ") " + str(obj.sec3_name) + " with a total votes of = " + str(sec_result))
+            print("------------------------------------------------------------------------------")
+        elif ((obj.sec_1 == obj.sec_3) and (obj.sec_1 > obj.sec_2) and (obj.sec_3 > obj.sec_2)):
+            print("------------------------ WE HAVE A TIE FOR SECRETARY -------------------------")
+            print(str(obj.sec1_no) + ") " + str(obj.sec1_name) + " with a total votes of = " + str(sec_result))
+            print(str(obj.sec3_no) + ") " + str(obj.sec3_name) + " with a total votes of = " + str(sec_result))
+            print("------------------------------------------------------------------------------")
+        elif ((obj.sec_1 == obj.sec_2) and (obj.sec_1 == obj.sec_3)
+              and (obj.sec_2 == obj.sec_1) and (obj.sec_2 == obj.sec_3)
+              and (obj.sec_3 == obj.sec_1) and (obj.sec_3 == obj.sec_2)):
             
             
             
